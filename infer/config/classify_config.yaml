@@ -1,0 +1,9 @@
+onnx_path: ../onnx/
+onnx_name: test_1_3_600_600_static.onnx
+image: ../image/0006.jpg
+engine: ../engine/test_1_3_600_600_static.engine
+input_name: input
+output_name: output
+useDLACore: -1
+runInInt8: 0
+runInFp16: 0
