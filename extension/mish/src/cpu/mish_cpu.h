@@ -1,15 +1,18 @@
 /*
  * @Author: your name
  * @Date: 2021-03-16 16:40:44
- * @LastEditTime: 2021-03-16 16:41:11
+ * @LastEditTime: 2021-03-18 10:44:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Demo/extension/mish/src/cpu/mish_cpu.h
  */
 
+#include <ATen/ATen.h>
+#include <ATen/CPUApplyUtils.h>
+#include <torch/torch.h>
 #include <torch/types.h>
 
-#include <cmath>
+// #include <cmath>
 #define GLOBAL_INLINE __inline__
 
 #define THRESHOLD 20

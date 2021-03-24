@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-03-16 17:36:59
-LastEditTime: 2021-03-16 19:41:49
+LastEditTime: 2021-03-18 14:51:16
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: /Demo/export_onn.py
@@ -18,7 +18,7 @@ import onnxruntime
 class MishCudaFunction(torch.autograd.Function):
     @staticmethod
     def symbolic(g, inp):
-        return g.op("plugin::Mish", inp, name_s="Mish")
+        return g.op("Mish::Mish", inp, name_s="Mish")
 
     @staticmethod
     def forward(ctx, inp):
@@ -33,8 +33,7 @@ class MishCudaFunction(torch.autograd.Function):
         return mish_backward(inp, grad_out)
 
 
-register_custom_op_symbolic("plugin::mish_plugin", MishCudaFunction.symbolic,
-                            11)
+register_custom_op_symbolic("plugin::Mish", MishCudaFunction.symbolic, 11)
 
 
 class MishCuda(torch.nn.Module):
@@ -89,7 +88,7 @@ def transform_to_onnx(batch_size=1, image_h=600, image_w=600):
                           opset_version=11,
                           do_constant_folding=True,
                           input_names=input_names,
-                          output_names=output_names,
+                          output_names=oumishtput_names,
                           dynamic_axes=dynamic_axes)
 
         print('Onnx model exporting done')

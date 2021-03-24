@@ -1,16 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2021-03-16 16:09:01
- * @LastEditTime: 2021-03-16 16:41:46
+ * @LastEditTime: 2021-03-18 10:43:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Demo/extension/mish/src/cpu/mish_cpu.cpp
  */
 
 #include "mish_cpu.h"
-
-#include <ATen/CPUApplyUtils.h>
-#include <torch/types.h>
 
 namespace cpu {
 

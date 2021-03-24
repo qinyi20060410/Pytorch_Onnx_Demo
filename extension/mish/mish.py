@@ -15,7 +15,7 @@ import json
 class MishCudaFunction(torch.autograd.Function):
     @staticmethod
     def symbolic(g, inp):
-        return g.op("Mish", inp, name_s="mish")
+        return g.op("Mish", inp, name_s="Mish")
 
     @staticmethod
     def forward(ctx, inp):
